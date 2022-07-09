@@ -1,0 +1,7 @@
+CORS: Cross-Origin Resource Sharing é um mecanismo baseado em cabeçalho HTTP que permite que um servidor indique quaisquer origens, domínios, portas etc... diferentes da sua, a partir da qual um navegador deve permitir o carregamento de recursos.
+
+EXPRESS:  é um framework para nodejs que fornece recursos mínimos para construção de servidores web.
+
+NODEMON: serve como atulizador de páginas e o 
+
+SUCRASE: Faz a transpilação de código javascript moderno para um js que o node js entenda.
