@@ -48,7 +48,6 @@ export const Form = styled.form`
         border-color: #999999;
         border-width: 1px;
         :focus {
-            background: #d3d3d3;
             border-width: 2px
             border-color: #111111
         }   
@@ -57,6 +56,16 @@ export const Form = styled.form`
     .actions {
         text-align: center;
         margin: 1rem;
-        color: #0E7321;
+
+        button{
+            background-color: #ffffff;
+            border-radius: 5px;
+            width: 100px;
+            height: 25px;
+            border-width: 1px;
+            :hover {
+                border-width: 2px;
+            }
+        }
     }
 `
