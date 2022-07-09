@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Login, Form } from "./styled-index";
+import { Login, Form } from "./styled-login";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
