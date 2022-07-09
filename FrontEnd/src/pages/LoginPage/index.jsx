@@ -14,19 +14,19 @@ const LoginPage = () => {
     
     return (
         <Login>
-            <h1 className="title">Login</h1>
+            
             <Form onSubmit={getSubmitAction}>
+                <h1 className="title">LOGIN</h1>
                 <div className="field">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} required/>
                 </div>
                 <div className="field">
-                    <label htmlFor="password">senha</label>
-                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" name="password" id="password" value={password} placeholder="Senha" onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
                 <div className="actions">
                     <button type="submit">Entrar</button>
                 </div>
+                
             </Form>
         </Login>
     );

@@ -1,6 +1,6 @@
 class LoginController {
     async index(req, res){
-        return res.json({login: "O vamos se logar?"})
+        return res.json({login: "Tela de Login da aplicação"})
     }
 }
 

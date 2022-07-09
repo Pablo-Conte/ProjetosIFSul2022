@@ -1,38 +1,62 @@
 import styled from "styled-components"
 
 export const Login = styled.div `
+    width: 100vw;
+    height: 100vh;
+    background-color: #0E7321;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    min-height: 80vh;
-    padding: 2em;
+    align-items: center;
+
 `
 
 export const Form = styled.form`
-    background-color: #f1f1f1;
     width: 100%;
-    max-width: 480px;
+    max-width: 30rem;
+    min-height: 40vh;
     padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+    
+    h1 {
+        text-align: center;
+    }
 
     label {
         padding: 0.5rem;
+        font-size: 1.4375rem;
     }
 
     .field {
-        padding-bottom: 0.5rem
+        padding-bottom: 1rem;
+        margin-bottom: 10px;
+        justify-content: center;
     }
 
     .field label {
         display: block;
+        border: none
     }
 
     .field input {
-        width: 100%
+        width: 100%;
+        height: 30px;
+        padding: 10px;
+        border-radius: 5px;
+        border-color: #999999;
+        border-width: 1px;
+        :focus {
+            background: #d3d3d3;
+            border-width: 2px
+            border-color: #111111
+        }   
     }
 
     .actions {
         text-align: center;
-        margin-top: 0.5rem;
+        margin: 1rem;
+        color: #0E7321;
     }
 `
