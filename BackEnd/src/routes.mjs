@@ -5,7 +5,8 @@ import LoginController from "./controllers/LoginController.mjs"; //importa o arq
 
 const routes = new Router() //instanciando um objeto do tipo Router
 
-routes.get('/register', RegisterController.index)
+
+routes.post('/register', RegisterController.create)
 routes.get('/login', LoginController.index) //usando o comportamento do Router para criar uma rota, temos dois parâmetros dentro da função get, uma pegando o nome da rota e o outro recebendo nosso controlador citado acima
 
 

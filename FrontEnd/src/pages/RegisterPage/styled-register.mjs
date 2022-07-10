@@ -12,6 +12,7 @@ export const Register = styled.div `
 `
 
 export const Form = styled.form`
+    font-family: Arial;
     width: 100%;
     max-width: 30rem;
     min-height: 40vh;
@@ -67,5 +68,16 @@ export const Form = styled.form`
                 border-width: 2px;
             }
         }
+    }
+    p{
+        text-align: center;
+        margin-top: 0px;
+        padding: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        font-weight: bold;
+        color: #0E7321;
     }
 `

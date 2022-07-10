@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Register, Form } from "./styled-register.mjs";
+import axios from "axios"
 
 
 const RegisterPage = () => {
@@ -10,8 +11,13 @@ const RegisterPage = () => {
     const getSubmitAction = (e) => {
         e.preventDefault()
         if (password === verificarPassword) {
-            console.log("iguais")
-            console.log("submit", {email, password});
+            axios.post("http://localhost:5000/register", {
+                email: {email},
+                password: {password}
+            }).then((response) => {
+                console.log(response)
+            })
+
         } else {
             alert("Senhas não são iguais, tente novamente.")
         }
@@ -35,11 +41,11 @@ const RegisterPage = () => {
                     <input type="password" name="VerificaPassword" id="VerificaPassword" value={verificarPassword} placeholder="Confirmar Senha" onChange={(e) => setVerificarPassword(e.target.value)} required/>
                 </div>
 
+                <p>Voltar para a Página de <a href="/login">Login</a></p>
 
                 <div className="actions">
-                    <button type="submit">Entrar</button>
+                    <button type="submit">Cadastrar</button>
                 </div>
-
             </Form>
         </Register>
     );
