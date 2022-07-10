@@ -1,6 +1,7 @@
 import express, {Router} from "express";
 import cors from "cors";
 import routes from './routes.mjs'
+import "./database/index.mjs";
 
 class App {
     constructor(){ //Estamos aqui setando o construtor da classe app
@@ -17,6 +18,7 @@ class App {
     routes(){
         this.server.use(routes)
     }
+
 }
 
 export default new App().server
