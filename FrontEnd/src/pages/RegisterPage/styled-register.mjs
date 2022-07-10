@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Login = styled.div `
+export const Register = styled.div `
     width: 100vw;
     height: 100vh;
     background-color: #0E7321;
@@ -19,7 +19,6 @@ export const Form = styled.form`
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
-    font-family: Arial;
     
     h1 {
         text-align: center;
@@ -68,17 +67,5 @@ export const Form = styled.form`
                 border-width: 2px;
             }
         }
-    }
-
-    p{
-        text-align: center;
-        margin-top: 0px;
-        padding: 10px;
-    }
-
-    a{
-        text-decoration: none;
-        font-weight: bold;
-        color: #0E7321;
     }
 `
