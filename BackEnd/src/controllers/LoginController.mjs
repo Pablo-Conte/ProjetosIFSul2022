@@ -1,4 +1,6 @@
 import dataBase from "../database/index.mjs";
+import bcrypt from "bcrypt"
+const saltRounds = 10
 
 const db = dataBase.connection;
 
@@ -6,14 +8,21 @@ class LoginController {
     async login(req, res){
         const email = req.body.email;
         const password = req.body.password;
-        db.query("SELECT * FROM usuarios WHERE email = ? AND password = ?", [email, password], (err, result) => {
+        db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
             if (err){
                 res.send(err);
             }
             if (result.length > 0){
-                res.send({msg: "Usuário Logado com sucesso"})
+                bcrypt.compare(password, result[0].password, (err, result) => {
+                    if (result){
+                        res.send({msg: "Usuário logado com sucesso"})
+                    } else {
+                        res.send({msg: "E-mail ou Senha estão incorretos"})
+                    }
+                    
+                })
             } else {
-                res.send({msg: "Conta não encontrada"})
+                res.send({msg: "E-mail não encontrado"})
             }
         })
     }

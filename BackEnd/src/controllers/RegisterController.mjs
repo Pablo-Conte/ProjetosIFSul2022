@@ -1,4 +1,6 @@
 import dataBase from "../database/index.mjs"
+import bcrypt from "bcrypt"
+const saltRounds = 10
 
 const db = dataBase.connection
 
@@ -15,15 +17,18 @@ class RegisterController {
                 res.send(err)
             }
             if(result.length == 0){
-                db.query("INSERT INTO usuarios (email, password) VALUES (?, ?)", [email, password], (err, result) => {
-                    if (err){
-                        console.log(err)
-                    } else {
-                        res.send({msg: "Cadastrado com sucesso!"})
+                bcrypt.hash(password, saltRounds, (err, hash) => {
+                    db.query("INSERT INTO usuarios (email, password) VALUES (?, ?)", [email, hash], (err, result) => {
+                        if (err){
+                            console.log(err)
+                        } else {
+                            res.send({msg: "Cadastrado com sucesso!"})
+                            
+                        }
                         
-                    }
-                    
-                });
+                    });
+                })
+                
             } else {
                 res.send({msg: "Este usuario já está cadastrado!"})
             }

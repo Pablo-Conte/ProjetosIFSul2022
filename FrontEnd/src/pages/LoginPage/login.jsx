@@ -13,6 +13,7 @@ const LoginPage = () => {
             password: password
         }).then((response) => {
             alert(response.data.msg)
+            console.log(response)
         })
         
     }
