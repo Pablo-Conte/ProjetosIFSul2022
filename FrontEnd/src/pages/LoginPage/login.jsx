@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Login, Form } from "./styled-login";
 
@@ -7,8 +8,12 @@ const LoginPage = () => {
     
     const getSubmitAction = (e) => {
         e.preventDefault()
-        
-        console.log("submit", {email, password});
+        axios.post("http://localhost:5000/login", {
+            email: email,
+            password: password
+        }).then((response) => {
+            alert(response.data.msg)
+        })
         
     }
     

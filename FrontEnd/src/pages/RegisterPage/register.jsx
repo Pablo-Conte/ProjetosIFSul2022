@@ -12,10 +12,10 @@ const RegisterPage = () => {
         e.preventDefault()
         if (password === verificarPassword) {
             axios.post("http://localhost:5000/register", {
-                email: {email},
-                password: {password}
+                email: email,
+                password: password
             }).then((response) => {
-                console.log(response)
+                alert(response.data.msg)
             })
 
         } else {

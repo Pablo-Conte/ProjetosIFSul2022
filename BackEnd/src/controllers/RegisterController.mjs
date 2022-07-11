@@ -8,8 +8,8 @@ class RegisterController {
     }
 
     async create (req, res){
-        const email = req.body.email.email;
-        const password = req.body.password.password;
+        const email = req.body.email;
+        const password = req.body.password;
         db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
             if(err){
                 res.send(err)
@@ -20,6 +20,7 @@ class RegisterController {
                         console.log(err)
                     } else {
                         res.send({msg: "Cadastrado com sucesso!"})
+                        
                     }
                     
                 });
