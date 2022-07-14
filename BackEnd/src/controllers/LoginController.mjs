@@ -1,5 +1,6 @@
 import dataBase from "../database/index.mjs";
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 const saltRounds = 10
 
 const db = dataBase.connection;
@@ -22,8 +23,19 @@ class LoginController {
                     
                 })
             } else {
-                res.send({msg: "E-mail não encontrado"})
+                res.send("problema ocorreu ao logar usuário")
             }
+        })
+    }
+
+    async list(req, res){
+        const email = req.body.email;
+        const password = req.body.password;
+        db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
+            if (err){
+                res.send(err);
+            }
+            res.json(result)
         })
     }
 

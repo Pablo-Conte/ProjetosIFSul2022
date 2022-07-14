@@ -22,7 +22,7 @@ class RegisterController {
                         if (err){
                             console.log(err)
                         } else {
-                            res.send({msg: "Cadastrado com sucesso!"})
+                            res.send({msg: "Usuario criado com sucesso"})
                             
                         }
                         

@@ -1,6 +1,7 @@
 //import HomePage from './pages/HomePage';
 import {RegisterPage, LoginPage} from './pages/index';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

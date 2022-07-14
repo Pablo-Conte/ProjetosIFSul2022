@@ -2,6 +2,7 @@ import express, {Router} from "express";
 import cors from "cors";
 import routes from './routes.mjs'
 import "./database/index.mjs";
+import jwt from "jsonwebtoken"
 
 class App {
     constructor(){ //Estamos aqui setando o construtor da classe app
